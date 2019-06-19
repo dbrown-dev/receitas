@@ -7,7 +7,7 @@ class DisplayRecipes extends React.Component {
   }
 
   getAllRecipes = () => {
-    return fetch('/api/summary')
+    return fetch('/api/recipes')
       .then(response => {
         return response.json()
       })

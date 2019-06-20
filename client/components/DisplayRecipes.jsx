@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 class DisplayRecipes extends React.Component {
   constructor(props) {
@@ -24,11 +25,11 @@ class DisplayRecipes extends React.Component {
     if (this.state.recipes) {
       return (
         <div>
-          <h1>OMG!</h1>
+          <h1>Comida Gostosa</h1>
           {this.state.recipes.map(recipe => {
             return (
               <div>
-                <h2>{recipe.title}</h2>
+                <Link to={`/recipe/${recipe.id}`}><h2>{recipe.title}</h2></Link>
                 <p>{recipe.season}</p>
                 <p>{recipe.rating}</p>
                 <p>{recipe.time_options}</p>

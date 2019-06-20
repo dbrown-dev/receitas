@@ -1,6 +1,6 @@
 import React from 'react'
 
-class RecipeDetails extends React.Component {
+export default class RecipeDetails extends React.Component {
   constructor(props) {
     super(props)
     this.state = {}
@@ -60,5 +60,3 @@ class RecipeDetails extends React.Component {
     }
   }
 }
-
-export default RecipeDetails

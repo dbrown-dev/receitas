@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import DisplayRecipes from './DisplayRecipes'
 import RecipeDetails from './RecipeDetails'
 import Error404 from "./Error404";
+import AddRecipe from './AddRecipe';
 
 const App = () => {
   return (
@@ -11,7 +12,8 @@ const App = () => {
     <div>
       <Switch>
         <Route path="/" exact component={DisplayRecipes} />
-        <Route path="/recipe/:id"  component={RecipeDetails} />
+        <Route path="/recipe/add" exact component={AddRecipe} />
+        <Route path="/recipe/:id" component={RecipeDetails} />
         <Route component={Error404} />
       </Switch>
     </div>

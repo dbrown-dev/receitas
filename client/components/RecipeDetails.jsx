@@ -6,7 +6,7 @@ class RecipeDetails extends React.Component {
     this.state = {}
   }
 
-  getRecipe = (id) => {
+  getRecipe = id => {
     return fetch(`/api/recipes/${id}`)
       .then(response => {
         return response.json()
@@ -17,7 +17,7 @@ class RecipeDetails extends React.Component {
   }
 
   componentDidMount() {
-    this.getRecipe(props.match.params.id)
+    this.getRecipe(this.props.match.params.id)
   }
 
   render() {
@@ -37,7 +37,20 @@ class RecipeDetails extends React.Component {
           <div>
             <h2>Ingredients:</h2>
             {recipe.ingredients.map(ingredient => (
-              <p> {ingredient.quantity} {ingredient.measurement_name} of {ingredient.name}  </p>
+              <p>
+                {' '}
+                {ingredient.quantity} {ingredient.measurement_name} of{' '}
+                {ingredient.name}{' '}
+              </p>
+            ))}
+          </div>
+          <div>
+            <h2>Instructions:</h2>
+            {recipe.instructions.map(instruction => (
+              <div>
+                <img src={instruction.image}></img>
+                <p>{instruction.instruction}</p>
+              </div>
             ))}
           </div>
         </div>
